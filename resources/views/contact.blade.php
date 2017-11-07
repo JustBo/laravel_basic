@@ -2,6 +2,21 @@
 
 @section('content')
   <h1>Contact</h1>
-  <p>Duis aute irure dolor in reprehenderit in voluptat
-    e velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  {!! Form::open(['url' => 'contact/submit']) !!}
+    <div class="form-group">
+      {{Form::label('name','Name')}}
+      {{Form::text('name','',['class' => 'form-control', 'placeholder' => 'Enter name'])}}
+    </div>
+    <div class="form-group">
+      {{Form::label('email','E-mail Address')}}
+      {{Form::text('email','',['class' => 'form-control', 'placeholder' => 'Enter email'])}}
+    </div>
+    <div class="form-group">
+      {{Form::label('message','Message')}}
+      {{Form::textarea('message','',['class' => 'form-control', 'placeholder' => 'Enter message'])}}
+    </div>
+    <div class="">
+      {{Form::submit('Submit',['class' => 'btn btn-primary'])}}
+    </div>
+  {!! Form::close() !!}
 @endsection
